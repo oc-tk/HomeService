@@ -4,7 +4,7 @@ use warp::{Filter, Rejection, Reply};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct Computer {
-    id: u32,
+    id: i32,
     mac_address: String,
 }
 
@@ -17,7 +17,7 @@ enum ApiError {
 
 impl warp::reject::Reject for ApiError {}
 
-async fn get_computer_by_id(id: u32, computers: Computers) -> Result<impl Reply, Rejection> {
+async fn get_computer_by_id(id: i32, computers: Computers) -> Result<impl Reply, Rejection> {
     if computers.iter().any(|c| c.id == id) {
         match computers.into_iter().nth(id as usize) {
             Some(comp) => {
@@ -59,7 +59,7 @@ async fn main() {
     let computers: Computers = get_computers();
     let computers_filter = warp::any().map(move || computers.clone());
 
-    let wake_computer_by_id = warp::path!("computer" / u32)
+    let wake_computer_by_id = warp::path!("computer" / i32)
         .and(warp::get())
         .and(computers_filter.clone())
         .and_then(get_computer_by_id);
