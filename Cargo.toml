@@ -10,3 +10,4 @@ warp = "0.2"
 parking_lot = "0.10.0"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "0.2", features = ["macros"] }
+wake-on-lan = { git = "https://github.com/teemuremes/wake-on-lan-rust.git" }

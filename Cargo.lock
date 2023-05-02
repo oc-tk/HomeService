@@ -351,6 +351,7 @@ dependencies = [
  "parking_lot",
  "serde",
  "tokio",
+ "wake-on-lan",
  "warp",
 ]
 
@@ -1173,6 +1174,11 @@ name = "version_check"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
+
+[[package]]
+name = "wake-on-lan"
+version = "0.2.0"
+source = "git+https://github.com/teemuremes/wake-on-lan-rust.git#86d7ba1fb1a803a05c74fcf7248927926f7deb13"
 
 [[package]]
 name = "want"
