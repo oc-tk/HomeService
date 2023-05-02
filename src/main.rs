@@ -73,7 +73,6 @@ fn get_computers() -> Computers{
     comps
 }
 
-
 #[tokio::main]
 async fn main() {
     let computers: Computers = get_computers();
