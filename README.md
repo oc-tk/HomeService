@@ -13,4 +13,3 @@ Todo:
 
 
 I am still learning Rust, if you found any mistakes you can open Issue Ticket or Pull Request.
-I can implement some features.
